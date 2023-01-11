@@ -1,13 +1,45 @@
 import * as THREE from 'three';
-import { Texture } from 'three';
+import { Material, Texture } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './App.css';
 import { AboutMe } from './components/AboutMe/AboutMe';
 import { MyProjects } from './components/MyProjects/MyProjects';
 
-import ProfileCube from './ProfileCube/ProfileCube';
-
 function App() {
+
+  const setUpVideo = (inSrc: string) => {
+    const vidElem = document.createElement("video");
+    /// ... some setup like poster image, size, position etc. goes here...
+    /// now, add sources:
+    const sourceMP4 = document.createElement("source");
+    sourceMP4.type = "video/mp4";
+    sourceMP4.src = inSrc;
+    // performance
+
+
+    vidElem.appendChild(sourceMP4);
+
+    vidElem.autoplay = true;
+    vidElem.muted = true;
+    vidElem.loop = true;
+    vidElem.setAttribute("crossorigin", "anonymous");
+    // i think this will not be not be needed if you have a server
+
+    vidElem.style.display = "none"; // this makes it so the html element isnt there
+
+    vidElem.load();
+    vidElem.play()
+    
+    return vidElem;
+  }
+  const createTextureFromVideoElement = (video: HTMLVideoElement) => {
+    let texture = new THREE.VideoTexture(video);
+    texture.needsUpdate;
+    texture.minFilter = THREE.LinearFilter;
+    texture.magFilter = THREE.LinearFilter;
+    texture.format = THREE.RGBFormat;
+    return texture;
+  }
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 300);
@@ -67,15 +99,24 @@ function App() {
   const mat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/ben-josh-park.png') });
   const mat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/jen-and-i.png') });
   const mat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tinaaa.png') });
-  const mat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/smoker-with-wings.png') });
+  const mat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/skol.png') });
+
+  const movieSagaVideo = setUpVideo('src/assets/movie_saga.mp4');
+  const movieSagaTexture = createTextureFromVideoElement(movieSagaVideo)
+  // const movieSagaTexture = new THREE.VideoTexture()
+  const movieSagaMaterial = new THREE.MeshBasicMaterial({
+    map: movieSagaTexture,
+    toneMapped: false, // turn of tone mapping, used for showing HDR
+  })
+
 
   const cubeMaterial = [
-    mat1,
+    mat6,
     mat2,
     mat3,
     mat4,
+    mat1,
     mat5,
-    mat6,
   ];
 
   const cubeGeometry = new THREE.BoxGeometry(20, 20, 20);
@@ -131,10 +172,12 @@ function App() {
   const gridIronGeometry = new THREE.BoxGeometry(20, 40, 20);
 
   const gridIronCube = new THREE.Mesh(gridIronGeometry, gridIronMaterial)
-  gridIronCube.position.x = 30;
+  gridIronCube.position.x = 25;
   gridIronCube.position.y = 20;
-  gridIronCube.position.z = 510;
+  gridIronCube.position.z = 530;
   scene.add(gridIronCube);
+
+  
 
 
   // function to move camera on scroll
@@ -153,6 +196,8 @@ function App() {
   })
 
   document.body.onscroll = moveCamera;
+
+
 
   const animate = () => {
     requestAnimationFrame(animate); // requestAnimationFrame is a built in that tells the browser I'm going to animate something

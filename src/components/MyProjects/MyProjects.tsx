@@ -3,7 +3,7 @@ import React from 'react'
 
 export const MyProjects: React.FC = () => {
     return (
-        <Box sx={{ mt: 5 }}>
+        <Box sx={{ mt: 35 }}>
             <Grid container spacing={2}>
                 
                 <Grid item xs={6} mt={10} sx={{ backgroundColor: 'rgb(14, 44, 55, .7)' }}>
@@ -29,8 +29,14 @@ export const MyProjects: React.FC = () => {
                 <Grid item xs={6} height={180}>
                     <></>
                 </Grid>
-                <Grid item xs={6} height={180} mt={10} sx={{ backgroundColor: 'rgb(14, 44, 55, .7)' }}>
-                    <></>
+                <Grid item xs={6} mt={10} sx={{ backgroundColor: 'rgb(14, 44, 55, .7)' }}>
+                    <Box>
+                        <Typography>These projects are two day sprints ("weekend challenges") I did while at Prime Digital Academy</Typography>
+                        <Typography variant='h5' mt={3} mb={1} p={1}><i>Server Side Calculator</i></Typography>
+                        <Typography variant='body1'>
+                            
+                        </Typography>
+                    </Box>
                 </Grid>
                 <Grid item xs={6}>
                     <></>
