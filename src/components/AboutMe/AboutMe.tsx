@@ -3,9 +3,9 @@ import React from 'react'
 
 export const AboutMe: React.FC = () => {
     return (
-        <Container>
-            <Grid container spacing={2}>
-                <Grid item xs={6} height={200} mt={12} pb={2} sx={{ backgroundColor: 'rgb(14, 44, 55, .7)' }} container={true} direction='column' justifyContent={'center'} borderRadius={2}>
+        <Box>
+            <Grid container spacing={2} mt={12}>
+                <Grid item xs={6} height={200} pb={2} sx={{ backgroundColor: 'rgb(14, 44, 55, .9)', p: 2 }} container={true} direction='column' justifyContent={'center'} borderRadius={2}>
                     <Typography variant='h4'>Josh Clemons</Typography>
                     <Typography variant='body2'>mrjoshc@gmail.com</Typography>
                     <Typography variant='body2'>(763)-607-6719</Typography>
@@ -22,18 +22,21 @@ export const AboutMe: React.FC = () => {
                 <Grid item xs={6}>
                     <></>
                 </Grid>
-                <Grid item xs={12} height={180}>
+                <Grid item xs={12} height={120}>
                     <></>
                 </Grid>
                 <Grid item xs={8} height={180}>
-                    <Box><Typography variant={'h6'}>“Choose the positive. You have a choice, you are master of your attitude, choose the positive, the constructive. Optimism is a faith that leads to success.” -Bruce Lee</Typography></Box>
+                    {/* <Box><Typography variant={'h6'}>“Choose the positive. You have a choice, you are master of your attitude, choose the positive, the constructive. Optimism is a faith that leads to success.” -Bruce Lee</Typography></Box> */}
                 </Grid>
                 <Grid item xs={4} height={180}>
                     <></>
                 </Grid>
+                <Grid item xs={6}>
+                    <></>
+                </Grid>
                 <Grid item xs={6} sx={{ backgroundColor: 'rgb(14, 44, 55, .7)' }}>
-                    <Typography variant={'h4'}>About Me:</Typography>
-                    <Typography variant={'body1'}>
+                    <Typography variant={'h4'} p={1}><u>About Me:</u></Typography>
+                    <Typography variant={'body1'} mt={3} p={1}>
                         Like many folks, I come to the software field through an unconventional method. My career after high school started in the Marine Corps. That was great for providing many of the building blocks that make me a better person today.
                         Beyond all of the important skills I learned, the military gave me a path to a career in the software industry.
                         <br />
@@ -47,10 +50,7 @@ export const AboutMe: React.FC = () => {
                         I am so thankful that with the VA's help I was able change careers into something that I both find really enjoyable and have a talent for.
                     </Typography>
                 </Grid>
-                <Grid item xs={6}>
-                    <></>
-                </Grid>
             </Grid>
-        </Container>
+        </Box>
     )
 }

@@ -3,6 +3,7 @@ import { Texture } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './App.css';
 import { AboutMe } from './components/AboutMe/AboutMe';
+import { MyProjects } from './components/MyProjects/MyProjects';
 
 import ProfileCube from './ProfileCube/ProfileCube';
 
@@ -100,16 +101,40 @@ function App() {
     planeMat2,
   ]
 
-const planeGeometry = new THREE.BoxGeometry(20, 20, 2);
-const usmcPlane = new THREE.Mesh(planeGeometry, planeMaterial)
-usmcPlane.position.x = 20;
-usmcPlane.position.y = 20;
-usmcPlane.position.z = 260;
+  const planeGeometry = new THREE.BoxGeometry(20, 20, 2);
+  const usmcPlane = new THREE.Mesh(planeGeometry, planeMaterial)
+  usmcPlane.position.x = -20;
+  usmcPlane.position.y = 10;
+  usmcPlane.position.z = 200;
 
-scene.add(usmcPlane);
+  scene.add(usmcPlane);
 
 
 
+
+  const gMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const gMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const gMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/gridiron_league_detail_picks.png') });
+  const gMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/gridiron_league_detail.png') });
+  const gMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/gridiron_user_dashboard.png') });
+  const gMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/gridiron_landing_page.png') });
+
+  const gridIronMaterial = [
+    gMat3,
+    gMat5,
+    gMat1,
+    gMat2,
+    gMat4,
+    gMat6
+  ]
+
+  const gridIronGeometry = new THREE.BoxGeometry(20, 40, 20);
+
+  const gridIronCube = new THREE.Mesh(gridIronGeometry, gridIronMaterial)
+  gridIronCube.position.x = 30;
+  gridIronCube.position.y = 20;
+  gridIronCube.position.z = 510;
+  scene.add(gridIronCube);
 
 
   // function to move camera on scroll
@@ -136,6 +161,7 @@ scene.add(usmcPlane);
     cube.rotation.y += 0.003;
     cube.rotation.z += 0.003;
     usmcPlane.rotation.y -= 0.01;
+    gridIronCube.rotation.y -= 0.01;
 
     orbitControls.update();
 
@@ -145,8 +171,9 @@ scene.add(usmcPlane);
   animate();
 
   return (
-    <div className="App">
+    <div className="App" style={{ marginLeft: '20px' }}>
       <AboutMe />
+      <MyProjects />
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       <p>Obcaecati quam, tenetur laudantium perspiciatis et architecto qui!</p>
       <p>Itaque est neque, non eum explicabo autem culpa!</p>
