@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import React, { useState } from 'react';
 import { Material, Texture } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './App.css';
@@ -29,7 +30,7 @@ function App() {
 
     vidElem.load();
     vidElem.play()
-    
+
     return vidElem;
   }
   const createTextureFromVideoElement = (video: HTMLVideoElement) => {
@@ -89,25 +90,19 @@ function App() {
   // Array(200).fill('').forEach(addStar);
 
   // loads and sets the background image
-  const spaceTexture = new THREE.TextureLoader().load('../src/assets/space.png') as Texture;
+  const spaceTexture = new THREE.TextureLoader().load('../src/assets/bg1.png') as Texture;
   scene.background = spaceTexture;
 
-  // This is for the CUBE with my pictures being displayed on it
   const texLoader = new THREE.TextureLoader();
+  const fillerMaterial = new THREE.MeshStandardMaterial({ color: 'rgb(1, 35, 80, 1)' });
+
+  // This is for the CUBE with my pictures being displayed on it
   const mat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/Fam-in-black-white.png') });
   const mat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/ben-catching-leaves.png') });
   const mat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/ben-josh-park.png') });
   const mat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/jen-and-i.png') });
   const mat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tinaaa.png') });
   const mat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/skol.png') });
-
-  const movieSagaVideo = setUpVideo('src/assets/movie_saga.mp4');
-  const movieSagaTexture = createTextureFromVideoElement(movieSagaVideo)
-  // const movieSagaTexture = new THREE.VideoTexture()
-  const movieSagaMaterial = new THREE.MeshBasicMaterial({
-    map: movieSagaTexture,
-    toneMapped: false, // turn of tone mapping, used for showing HDR
-  })
 
 
   const cubeMaterial = [
@@ -134,10 +129,10 @@ function App() {
   const planeMat2 = new THREE.MeshStandardMaterial({ map: texLoader.load('src/assets/vettec.png') });
   const planeMat3 = new THREE.MeshStandardMaterial({ color: 0x0e2c37 });
   const planeMaterial = [
-    planeMat3,
-    planeMat3,
-    planeMat3,
-    planeMat3,
+    fillerMaterial,
+    fillerMaterial,
+    fillerMaterial,
+    fillerMaterial,
     planeMat1,
     planeMat2,
   ]
@@ -151,8 +146,7 @@ function App() {
   scene.add(usmcPlane);
 
 
-
-
+  // start gridIron cube
   const gMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff });
   const gMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff });
   const gMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/gridiron_league_detail_picks.png') });
@@ -174,10 +168,55 @@ function App() {
   const gridIronCube = new THREE.Mesh(gridIronGeometry, gridIronMaterial)
   gridIronCube.position.x = 25;
   gridIronCube.position.y = 20;
-  gridIronCube.position.z = 530;
+  gridIronCube.position.z = 600;
   scene.add(gridIronCube);
+  // end gridIron cube
 
-  
+
+
+
+
+  const movieSagaVideo = setUpVideo('src/assets/movie_saga.mp4');
+  const movieSagaTexture = createTextureFromVideoElement(movieSagaVideo)
+  const movieSagaMaterial = new THREE.MeshBasicMaterial({
+    map: movieSagaTexture,
+    toneMapped: false, // turn of tone mapping, used for showing HDR
+  });
+  const serverCalcVideo = setUpVideo('src/assets/server_calculator.mp4');
+  const serverCalcTexture = createTextureFromVideoElement(serverCalcVideo)
+  const serverCalcMaterial = new THREE.MeshBasicMaterial({
+    map: serverCalcTexture,
+    toneMapped: false, // turn of tone mapping, used for showing HDR
+  });
+  const taskListVideo = setUpVideo('src/assets/task_list.mp4');
+  const taskListTexture = createTextureFromVideoElement(taskListVideo)
+  const taskListMaterial = new THREE.MeshBasicMaterial({
+    map: taskListTexture,
+    toneMapped: false, // turn of tone mapping, used for showing HDR
+  });
+  const photoGalleryVideo = setUpVideo('src/assets/photo_gallery2.mp4');
+  const photoGalleryTexture = createTextureFromVideoElement(photoGalleryVideo)
+  const photoGalleryMaterial = new THREE.MeshBasicMaterial({
+    map: photoGalleryTexture,
+    toneMapped: false, // turn of tone mapping, used for showing HDR
+  });
+
+  const projectMaterial = [
+    movieSagaMaterial,
+    photoGalleryMaterial,
+    fillerMaterial,
+    fillerMaterial,
+    serverCalcMaterial,
+    taskListMaterial,
+  ]
+
+  const projectGeometry = new THREE.BoxGeometry(24, 24, 24);
+  const projectCube = new THREE.Mesh(projectGeometry, projectMaterial)
+  projectCube.position.x = 40;
+  projectCube.position.y = 15;
+  projectCube.position.z = 700;
+  scene.add(projectCube);
+  // end projectCube cube
 
 
   // function to move camera on scroll
@@ -206,7 +245,8 @@ function App() {
     cube.rotation.y += 0.003;
     cube.rotation.z += 0.003;
     usmcPlane.rotation.y -= 0.01;
-    gridIronCube.rotation.y -= 0.01;
+    gridIronCube.rotation.y -= 0.005;
+    projectCube.rotation.y -= 0.0025;
 
     orbitControls.update();
 
