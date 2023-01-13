@@ -379,7 +379,7 @@ export const MyProjects: React.FC = () => {
                     <></>
                 </Grid>
                 <Grid item xs={6} height={1800}>
-                    <></>
+                    <Box></Box>
                 </Grid>
                 <Grid item xs={6} mt={10} >
                     <Box>
