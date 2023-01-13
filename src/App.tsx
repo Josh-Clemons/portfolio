@@ -202,21 +202,56 @@ function App() {
   });
 
   const projectMaterial = [
+    taskListMaterial,
     movieSagaMaterial,
-    photoGalleryMaterial,
     fillerMaterial,
     fillerMaterial,
     serverCalcMaterial,
-    taskListMaterial,
+    photoGalleryMaterial,
+
   ]
 
   const projectGeometry = new THREE.BoxGeometry(24, 24, 24);
   const projectCube = new THREE.Mesh(projectGeometry, projectMaterial)
   projectCube.position.x = 40;
   projectCube.position.y = 15;
-  projectCube.position.z = 700;
+  projectCube.position.z = 650;
   scene.add(projectCube);
   // end projectCube cube
+
+
+
+
+// start tanya cube
+const tanyaMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_frame.jpg') });
+const tanyaMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_tunnel.jpg') });
+const tanyaMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_front_frame.jpg') });
+const tanyaMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_rear.jpg') });
+const tanyaMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_start.jpg') });
+const tanyaMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_with_wheels.jpg') });
+
+const tanyaMaterial = [
+  tanyaMat3,
+  tanyaMat5,
+  tanyaMat1,
+  tanyaMat2,
+  tanyaMat4,
+  tanyaMat6
+]
+
+const tanyaGeometry = new THREE.BoxGeometry(24, 24, 24);
+
+const tanyaCube = new THREE.Mesh(tanyaGeometry, tanyaMaterial)
+tanyaCube.position.x = 60;
+tanyaCube.position.y = 15;
+tanyaCube.position.z = 680;
+scene.add(tanyaCube);
+// end tanya cube
+
+
+
+
+
 
 
   // function to move camera on scroll
@@ -247,6 +282,9 @@ function App() {
     usmcPlane.rotation.y -= 0.01;
     gridIronCube.rotation.y -= 0.005;
     projectCube.rotation.y -= 0.0025;
+    tanyaCube.rotation.x += 0.003;
+    tanyaCube.rotation.y += 0.003;
+    tanyaCube.rotation.z += 0.003;
 
     orbitControls.update();
 
