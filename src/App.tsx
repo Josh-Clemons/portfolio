@@ -222,35 +222,59 @@ function App() {
 
 
 
-// start tanya cube
-const tanyaMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_frame.jpg') });
-const tanyaMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_tunnel.jpg') });
-const tanyaMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_front_frame.jpg') });
-const tanyaMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_rear.jpg') });
-const tanyaMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_start.jpg') });
-const tanyaMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_with_wheels.jpg') });
+  // start tanya cube
+  const tanyaMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_frame.jpg') });
+  const tanyaMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_tunnel.jpg') });
+  const tanyaMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_front_frame.jpg') });
+  const tanyaMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_rear.jpg') });
+  const tanyaMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_start.jpg') });
+  const tanyaMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/tanya_with_wheels.jpg') });
 
-const tanyaMaterial = [
-  tanyaMat3,
-  tanyaMat5,
-  tanyaMat1,
-  tanyaMat2,
-  tanyaMat4,
-  tanyaMat6
-]
+  const tanyaMaterial = [
+    tanyaMat2,
+    tanyaMat5,
+    fillerMaterial,
+    fillerMaterial,
+    tanyaMat1,
+    tanyaMat6
+  ]
 
-const tanyaGeometry = new THREE.BoxGeometry(24, 24, 24);
+  const tanyaGeometry = new THREE.BoxGeometry(24, 24, 24);
 
-const tanyaCube = new THREE.Mesh(tanyaGeometry, tanyaMaterial)
-tanyaCube.position.x = 60;
-tanyaCube.position.y = 15;
-tanyaCube.position.z = 680;
-scene.add(tanyaCube);
-// end tanya cube
-
-
+  const tanyaCube = new THREE.Mesh(tanyaGeometry, tanyaMaterial)
+  tanyaCube.position.x = 50;
+  tanyaCube.position.y = 15;
+  tanyaCube.position.z = 685;
+  scene.add(tanyaCube);
+  // end tanya cube
 
 
+
+  // start personalProject cube
+  const projectMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/powerwheels_conversion.jpg') });
+  const projectMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/smoker_stuff.jpg') });
+  const projectMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/trailer.jpg') });
+  const projectMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/cornhole_table.png') });
+  const projectMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/cornhole_score_keeper.jpg') });
+  const projectMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('src/assets/dartboard.png') });
+
+  const personalProjectMaterial = [
+    projectMat1,
+    projectMat5,
+    fillerMaterial,
+    fillerMaterial,
+    projectMat2,
+    projectMat6
+  ]
+
+  const personalProjectGeometry = new THREE.BoxGeometry(18, 30, 18);
+
+  const personalProjectCube = new THREE.Mesh(personalProjectGeometry, personalProjectMaterial)
+  personalProjectCube.position.x = 60;
+  personalProjectCube.position.y = 18;
+  personalProjectCube.position.z = 710;
+  scene.add(personalProjectCube);
+  // end personalProject cube
 
 
 
@@ -282,9 +306,8 @@ scene.add(tanyaCube);
     usmcPlane.rotation.y -= 0.01;
     gridIronCube.rotation.y -= 0.005;
     projectCube.rotation.y -= 0.0025;
-    tanyaCube.rotation.x += 0.003;
-    tanyaCube.rotation.y += 0.003;
-    tanyaCube.rotation.z += 0.003;
+    tanyaCube.rotation.y -= 0.003;
+    personalProjectCube.rotation.y -= 0.003;
 
     orbitControls.update();
 
@@ -297,26 +320,6 @@ scene.add(tanyaCube);
     <div className="App" style={{ marginLeft: '20px' }}>
       <AboutMe />
       <MyProjects />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <p>Obcaecati quam, tenetur laudantium perspiciatis et architecto qui!</p>
-      <p>Itaque est neque, non eum explicabo autem culpa!</p>
-      <p>Non nisi dicta at illo dignissimos iusto quae.</p>
-      <p>Illum quis voluptas cupiditate, fugit beatae doloribus similique!</p>
-      <p>Architecto facilis, culpa esse totam voluptas similique eum.</p>
-      <p>Eveniet magni perferendis excepturi reiciendis ratione hic ipsum?</p>
-      <p>Totam quas nostrum enim dolor temporibus minima itaque.</p>
-      <p>Assumenda fugit similique impedit delectus aliquid, magni amet?</p>
-      <p>Eum incidunt harum eaque delectus numquam sed aspernatur!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <p>Obcaecati quam, tenetur laudantium perspiciatis et architecto qui!</p>
-      <p>Itaque est neque, non eum explicabo autem culpa!</p>
-      <p>Non nisi dicta at illo dignissimos iusto quae.</p>
-      <p>Illum quis voluptas cupiditate, fugit beatae doloribus similique!</p>
-      <p>Architecto facilis, culpa esse totam voluptas similique eum.</p>
-      <p>Eveniet magni perferendis excepturi reiciendis ratione hic ipsum?</p>
-      <p>Totam quas nostrum enim dolor temporibus minima itaque.</p>
-      <p>Assumenda fugit similique impedit delectus aliquid, magni amet?</p>
-      <p>Eum incidunt harum eaque delectus numquam sed aspernatur!</p>
     </div>
   )
 }

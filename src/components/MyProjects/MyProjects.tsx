@@ -284,7 +284,7 @@ export const MyProjects: React.FC = () => {
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
                                 <Typography variant={'body1'} p={1} mt={-2}>
-                                    I just love to create stuff. Here are a few non-programming projects I have done.
+                                    I just love to create stuff. From metal fabrication to cooking, it all brings me joy. Here are a few non-programming projects I have done.
                                     <br />
                                 </Typography>
                                 {/* second level accordion starts here */}
@@ -378,7 +378,7 @@ export const MyProjects: React.FC = () => {
                 <Grid item xs={6}>
                     <></>
                 </Grid>
-                <Grid item xs={6} height={180}>
+                <Grid item xs={6} height={1800}>
                     <></>
                 </Grid>
                 <Grid item xs={6} mt={10} >
