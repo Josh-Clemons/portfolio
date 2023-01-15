@@ -5,8 +5,12 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './App.css';
 import { AboutMe } from './components/AboutMe/AboutMe';
 import { MyProjects } from './components/MyProjects/MyProjects';
+import { Dna } from 'react-loader-spinner'
 
 function App() {
+  const [loadingState, setLoadingState] = React.useState<boolean>(true)
+
+
 
   const setUpVideo = (inSrc: string) => {
     const vidElem = document.createElement("video");
@@ -76,21 +80,10 @@ function App() {
 
   const orbitControls = new OrbitControls(camera, renderer.domElement); // listens to dom events on the mouse and updates camera position accordingly
 
-  // const addStar = () => {
-  //   const geometry = new THREE.SphereGeometry(0.1, 24, 24);
-  //   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-  //   const star = new THREE.Mesh(geometry, material);
-
-  //   const [x, y, z]: number[] = Array(3).fill(0).map(() => THREE.MathUtils.randFloatSpread(100));
-
-  //   star.position.set(x, y, z);
-  //   scene.add(star);
-  // }
-
-  // Array(200).fill('').forEach(addStar);
-
   // loads and sets the background image
-  const spaceTexture = new THREE.TextureLoader().load('../assets/bg1.png') as Texture;
+  const spaceTexture = new THREE.TextureLoader().load('../assets/bg1.png', () => {
+    setLoadingState(true)
+  }) as Texture;
   scene.background = spaceTexture;
 
   const texLoader = new THREE.TextureLoader();
@@ -288,8 +281,21 @@ function App() {
 
   return (
     <div className="App" style={{ marginLeft: '20px' }}>
-      <AboutMe />
-      <MyProjects />
+      {loadingState === true ?
+        <>
+          <AboutMe />
+          <MyProjects />
+        </>
+        :
+        <Dna
+          visible={true}
+          height="180"
+          width="180"
+          ariaLabel="dna-loading"
+          wrapperStyle={{}}
+          wrapperClass="dna-wrapper"
+        />}
+
     </div>
   )
 }
