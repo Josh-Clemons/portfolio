@@ -8,7 +8,7 @@ import { MyProjects } from './components/MyProjects/MyProjects';
 import { Dna } from 'react-loader-spinner'
 
 function App() {
-  const [loadingState, setLoadingState] = React.useState<boolean>(true)
+  const [loadingState, setLoadingState] = React.useState<boolean>(false)
 
 
 
@@ -81,7 +81,7 @@ function App() {
   const orbitControls = new OrbitControls(camera, renderer.domElement); // listens to dom events on the mouse and updates camera position accordingly
 
   // loads and sets the background image
-  const spaceTexture = new THREE.TextureLoader().load('../assets/bg1.png', () => {
+  const spaceTexture = new THREE.TextureLoader().load('../assets/bg2.png', () => {
     setLoadingState(true)
   }) as Texture;
   scene.background = spaceTexture;
@@ -281,21 +281,8 @@ function App() {
 
   return (
     <div className="App" style={{ marginLeft: '20px' }}>
-      {loadingState === true ?
-        <>
-          <AboutMe />
-          <MyProjects />
-        </>
-        :
-        <Dna
-          visible={true}
-          height="180"
-          width="180"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper"
-        />}
-
+      <AboutMe />
+      <MyProjects />
     </div>
   )
 }
