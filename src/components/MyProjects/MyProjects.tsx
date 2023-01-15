@@ -95,6 +95,20 @@ export const MyProjects: React.FC = () => {
                             </AccordionDetails>
                         </Accordion>
 
+                        {/* First Level Accordion */}
+                        <Accordion expanded={expandedLevelOne === 'clientAccordion'} onChange={handleAccordionChangeLevelOne('clientAccordion')}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
+                                id="clientAccordion"
+                                sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
+                            >
+                                <Typography variant="h5"><i>Client Project: </i>Coming soon!</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
+                                <></>
+                            </AccordionDetails>
+                        </Accordion>
+
 
                         {/* First Level Accordion */}
                         <Accordion expanded={expandedLevelOne === 'otherProjectsAccordion'} onChange={handleAccordionChangeLevelOne('otherProjectsAccordion')}>
