@@ -14,10 +14,10 @@ export const MyProjects: React.FC = () => {
     };
 
     return (
-        <Box sx={{ mt: 35 }}>
+        <Box sx={{ mt: 35, minWidth: 300 }}>
             <Grid container spacing={2}>
 
-                <Grid item xs={6} mt={10} sx={{ backgroundColor: 'rgb(1, 35, 80, .7)' }}>
+                <Grid item xs={9} sm={6} mt={10} sx={{ backgroundColor: 'rgb(1, 35, 80, .7)' }}>
                     <Box p={1}>
                         <Typography variant='h4' p={1}><u>My Projects:</u></Typography>
                         {/* First Level Accordion */}
@@ -27,12 +27,12 @@ export const MyProjects: React.FC = () => {
                                 id="gridIronAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="body1"><i>Solo Project: </i>Grid Iron Pickem</Typography>
+                                <Typography variant="h5"><i>Solo Project: </i>Grid Iron Pickem</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
                                 <Typography variant={'body1'} p={1} mt={-2}>
                                     Grid Iron Pickem is a full-stack mobile first web application where users pick NFL game winners in a competition against their friends.
-                                    This app was designed to replace a process that was managed for over 15 years with spreadsheets sent over email.
+                                    This app was designed to replace a process that was managed for 15 years with spreadsheets sent over email.
                                     <br />
                                 </Typography>
                                 {/* second level accordion starts here */}
@@ -89,75 +89,11 @@ export const MyProjects: React.FC = () => {
                                         <Typography variant="body1" sx={{ width: '70%' }}>Code Screenshot</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <img src='src/assets/grid_iron_code_example.png' alt="Grid Iron Code Example" style={{ width: '93%' }} />
+                                        <img src='assets/grid_iron_code_example.png' alt="Grid Iron Code Example" style={{ width: '93%' }} />
                                     </AccordionDetails>
                                 </Accordion>
                             </AccordionDetails>
                         </Accordion>
-
-                        {/* First Level Accordion */}
-                        {/* <Accordion expanded={expandedLevelOne === 'clientAccordion'} onChange={handleAccordionChangeLevelOne('clientAccordion')}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                                id="clientAccordion"
-                                sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
-                            >
-                                <Typography variant="body1"><i>Client Project: </i>Coming Soon</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
-                                <Typography variant={'body1'} p={1} mt={-2}>
-                                    Client Project Coming Soon
-                                    <br />
-                                </Typography> */}
-                        {/* second level accordion starts here */}
-                        {/* <Accordion expanded={expandedLevelTwo === 'gridIronLinks'} onChange={handleAccordionChangeLevelTwo('gridIronLinks')}>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                                        id="gridIronLinks"
-                                        sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}
-                                    >
-                                        <Typography variant="body1" sx={{ width: '70%' }}>Project Links</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
-                                            <ul>
-                                                <li><Link href='https://github.com/Josh-Clemons/GridIron-Pickem' target="_blank" sx={{ color: 'white', '&:visited': { color: 'darkgrey' } }}>GitHub Link</Link></li>
-                                            </ul>
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion> */}
-                        {/* second level accordion starts here */}
-                        {/* <Accordion expanded={expandedLevelTwo === 'gridIronTech'} onChange={handleAccordionChangeLevelTwo('gridIronTech')}>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                                        id="gridIronTech"
-                                        sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}
-                                    >
-                                        <Typography variant="body1" sx={{ width: '70%' }}>Technologies Used</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
-
-                                            <ul>
-                                                <li>React.js</li>
-                                            </ul>
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion> */}
-                        {/* second level accordion starts here */}
-                        {/* <Accordion expanded={expandedLevelTwo === 'gridIronCode'} onChange={handleAccordionChangeLevelTwo('gridIronCode')}>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                                        id="gridIronCode"
-                                        sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}
-                                    >
-                                        <Typography variant="body1" sx={{ width: '70%' }}>Code Screenshot</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                    </AccordionDetails>
-                                </Accordion>
-                            </AccordionDetails>
-                        </Accordion> */}
 
 
                         {/* First Level Accordion */}
@@ -167,7 +103,7 @@ export const MyProjects: React.FC = () => {
                                 id="otherProjectsAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="body1">Other Prime Projects</Typography>
+                                <Typography variant="h5">Other Prime Projects</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
                                 <Typography variant={'body1'} p={1} mt={-2}>
@@ -209,8 +145,6 @@ export const MyProjects: React.FC = () => {
                                         <Typography variant={'body1'} sx={{ mt: -1 }}>
                                             Everyone's favorite task list exercise. This project holds a couple of milestones for me, the first to use a database and the first to be hosted online.
                                             <br />
-                                            https://github.com/Josh-Clemons/weekend-sql-to-do-list
-                                            <br />
                                             <ul style={{ marginTop: -1, marginBottom: -1 }}>
                                                 <li>PostgreSQL</li>
                                                 <li>Express</li>
@@ -233,7 +167,7 @@ export const MyProjects: React.FC = () => {
                                         <Typography variant={'body1'} sx={{ mt: -1 }}>
                                             This photo gallery uses React.js and provides practice for local state, hooks, and a database to hold the information.
                                             <br />
-                                            https://github.com/Josh-Clemons/weekend-react-gallery
+                                            <Link href='https://github.com/Josh-Clemons/weekend-react-gallery' target="_blank" sx={{ color: 'white', '&:visited': { color: 'darkgrey' } }}>GitHub Link</Link>
                                             <br />
                                             <ul style={{ marginTop: -1, marginBottom: -1 }}>
                                                 <li>React</li>
@@ -280,7 +214,7 @@ export const MyProjects: React.FC = () => {
                                 id="personalProjectsAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="body1">Personal Projects</Typography>
+                                <Typography variant="h5">Random Projects</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
                                 <Typography variant={'body1'} p={1} mt={-2}>
@@ -345,7 +279,6 @@ export const MyProjects: React.FC = () => {
                                             <br />
                                             <ul style={{ marginTop: -1, marginBottom: -1 }}>
                                                 <li>Created with random scrap metal and parts from other broken things</li>
-                                                <li>Custom Paint</li>
                                             </ul>
                                         </Typography>
                                     </AccordionDetails>
@@ -365,8 +298,8 @@ export const MyProjects: React.FC = () => {
                                             <br />
                                             <ul style={{ marginTop: -1, marginBottom: -1 }}>
                                                 <li>Axle came from a mobility scooter</li>
-                                                <li>Custom wiring to include four 12v batteries</li>
-                                                <li>My son drives it year round, winter included</li>
+                                                <li>Custom wiring to include (4) 12v batteries</li>
+                                                <li>Snowblower tires adapted for year round use (made sure to keep the stock hub caps!)</li>
                                             </ul>
                                         </Typography>
                                     </AccordionDetails>
@@ -375,7 +308,7 @@ export const MyProjects: React.FC = () => {
                         </Accordion>
                     </Box>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={3} sm={6}>
                     <></>
                 </Grid>
                 <Grid item xs={6} height={1800}>

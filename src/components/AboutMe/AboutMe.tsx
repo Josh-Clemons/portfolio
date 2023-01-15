@@ -16,9 +16,9 @@ export const AboutMe: React.FC = () => {
 
 
     return (
-        <Box>
-            <Grid container spacing={2} mt={12}>
-                <Grid item xs={6} height={200} pb={2} sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', p: 2 }} container={true} direction='column' justifyContent={'center'} borderRadius={2}>
+        <Box minWidth={300}>
+            <Grid container spacing={2} mt={12}  >
+                <Grid item xs={9} sm={6} height={200} pb={2} sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', p: 2 }} container={true} direction='column' justifyContent={'center'} borderRadius={2}>
                     <Typography variant='h4'>Josh Clemons</Typography>
                     <Typography variant='body2'><a href="mailto:mrjoshc@gmail.com?subject=Hi Josh" style={{ color: 'white' }}>mrjoshc@gmail.com</a></Typography>
                     <Typography variant='body2'>(763)-607-6719</Typography>
@@ -32,7 +32,7 @@ export const AboutMe: React.FC = () => {
                     </Box>
 
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={3} sm={6}>
                     <></>
                 </Grid>
                 <Grid item xs={12} height={120}>
@@ -44,30 +44,30 @@ export const AboutMe: React.FC = () => {
                 <Grid item xs={4} height={180}>
                     <></>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={3} sm={6}>
                     <></>
                 </Grid>
-                <Grid item xs={6} height={400}>
+                <Grid item xs={9} sm={6} height={400}>
                     <Box p={1} sx={{ backgroundColor: 'rgb(1, 35, 80, .7)' }}>
                         <Typography variant={'h4'} p={1}><u>About Me:</u></Typography>
                         {/* First Level Accordion */}
-                        <Accordion expanded={expandedLevelOne === 'whySoftwareAccordion'} onChange={handleAccordionChangeLevelOne('whySoftwareAccordion')}>
+                        <Accordion sx={{ zIndex: 10 }} expanded={expandedLevelOne === 'whySoftwareAccordion'} onChange={handleAccordionChangeLevelOne('whySoftwareAccordion')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
                                 id="whySoftwareAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="body1">Why Software</Typography>
+                                <Typography variant="h5">Why Software</Typography>
                             </AccordionSummary>
-                            <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', maxHeight: 300, overflow: 'auto' }}>
+                            <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
                                 <Typography variant={'body1'} p={1}>
-                                    Like many folks, I came to the software field through an unconventional method. My career after high school started in the Marine Corps. It was great for providing many of the building blocks that make me a better person today.
-                                    Beyond all of the important skills I learned there, the military gave me a path to a career in the software industry.
+                                    Like many folks, I came to the software field through an unconventional method. My career after high school started in the Marine Corps.
+                                    It was great for providing many of the building blocks that make me a better person today, but just as importantly, the military gave me a path to a career in the software industry.
                                     <br />
                                     <br />
-                                    I did not know I wanted to be a software engineer right after my service was completed, but during the ensuing years I always found a way to
-                                    incorporate some type of software design into my roles. Whether it was becoming the primary SalesForce admin at NatureWorks or building an automated order form during my window sales career. I have always found a lot of joy in using technology to improve
-                                    my life and the people's lives around me.
+                                    Becoming a software engineer was not something I considered at first, but throughout my career I often found a way to
+                                    incorporate some type of development into my roles. Whether it was becoming the primary SalesForce admin at NatureWorks or building an automated order form during my window sales career.
+                                    Using software to improve the work experience for my colleagues and myself was a no-brainer, it's fun and made the work environment more productive.
                                     <br />
                                     <br />
                                     After ignoring the elephant in the room for many years, it dawned on me that the VETTEC program through the Veteran Affairs was an opportunity I could not pass up.
@@ -78,17 +78,17 @@ export const AboutMe: React.FC = () => {
 
 
                         {/* First Level Accordion: My Experience */}
-                        <Accordion expanded={expandedLevelOne === 'myExperienceAccordion'} onChange={handleAccordionChangeLevelOne('myExperienceAccordion')}>
+                        <Accordion sx={{ zIndex: 10 }} expanded={expandedLevelOne === 'myExperienceAccordion'} onChange={handleAccordionChangeLevelOne('myExperienceAccordion')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
                                 id="myExperienceAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="body1">Experience</Typography>
+                                <Typography variant="h5">Experience</Typography>
                             </AccordionSummary>
 
                             {/* Top level accordion details here */}
-                            <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', maxHeight: 400, overflow: 'auto' }}>
+                            <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
 
                                 {/* second level accordion starts here */}
                                 <Accordion expanded={expandedLevelTwo === 'jobOne'} onChange={handleAccordionChangeLevelTwo('jobOne')}>
@@ -107,11 +107,11 @@ export const AboutMe: React.FC = () => {
                                         </Box>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant='h6'>Full Stack Software Engineer Student</Typography>
+                                        <Typography variant='h6' sx={{ mt: -1, mb: -1 }}>Full Stack Software Engineer Student</Typography>
                                         <br />
                                         <Typography variant='body1'>Prime Digital is a full-time immersive learning program designed to equip emerging engineers with the skills needed to make an immediate contribution.</Typography>
                                         <br />
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
+                                        <Typography variant={'body1'} sx={{ mt: -2, mb: -2 }}>
                                             <ul>
                                                 <li>Developed and deployed a number of projects during the course, including a full-stack mobile first web application called Grid Iron Pickem.</li>
                                                 <li>Gained experience with agile development methodologies and version control systems such as Git</li>
@@ -137,11 +137,11 @@ export const AboutMe: React.FC = () => {
                                         </Box>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant='h6'>Commercial Sales Manager - Windows </Typography>
+                                        <Typography variant='h6' sx={{ mt: -1, mb: -1 }}>Commercial Sales Manager - Windows </Typography>
                                         <br />
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
+                                        <Typography variant={'body1'} sx={{ mt: -2, mb: -2 }}>
                                             <ul>
-                                                <li>Managed windows sales for commercial multi-family properties, serving as the customer’s primary point of contact beginning before the bidding process and continuing through the warrant period.</li>
+                                                <li>Managed windows sales for multi-family and commercial properties, serving as the customer’s primary point of contact beginning before the bidding process and continuing through the warranty period.</li>
                                                 <li>Built and maintained relationships with key clients, resulting in increased sales and repeat business.</li>
                                                 <li>Consistently exceeded sales goals, taking a business doing one million annually to over three million.</li>
                                                 <li>Developed sales tools to assist in the sales process and for reporting metrics to leadership.</li>
@@ -166,18 +166,18 @@ export const AboutMe: React.FC = () => {
                                         </Box>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant='h6'>Senior Account Specialist </Typography>
+                                        <Typography variant='h6' sx={{ mt: -1, mb: -1 }}>Senior Account Specialist </Typography>
                                         <br />
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
+                                        <Typography variant={'body1'} sx={{ mt: -2, mb: -2 }}>
                                             <ul>
-                                                <li>Responsible for intermodal export logistics to ship containerized cargo from the central US to the Asia-Pacific and Latin America regions</li>
+                                                <li>Responsible for intermodal export logistics to move cargo from the central US to the Asia-Pacific and Latin America regions</li>
                                                 <li>Prepared shipping documents for several different shipment and payment methods</li>
                                                 <li>Regularly communicated status updates to customers and found solutions when there was a delay in the shipping process</li>
                                                 <li>Served as the primary administrator for SalesForce.com (Sales Cloud)
                                                     <ul>
                                                         <li>Trained new users</li>
                                                         <li>Created reporting dashboards for leadership</li>
-                                                        <li>Managed and coordinated all improvements to the environment</li>
+                                                        <li>Coordinated all improvements to the environment</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -202,9 +202,9 @@ export const AboutMe: React.FC = () => {
 
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant='h6'>Senior Logistics Specialist </Typography>
+                                        <Typography variant='h6' sx={{ mt: -1, mb: -1 }}>Senior Logistics Specialist </Typography>
                                         <br />
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
+                                        <Typography variant={'body1'} sx={{ mt: -2, mb: -2 }}>
                                             <ul>
                                                 <li>Processed sales orders and maintained the backlog for business-to-business transactions</li>
                                                 <li>Supported management by delivering reports outlining performance, ensuring service level agreements are met</li>
@@ -217,13 +217,13 @@ export const AboutMe: React.FC = () => {
                         </Accordion>{/* End experience accordion here */}
 
                         {/* First Level Accordion: My Education */}
-                        <Accordion expanded={expandedLevelOne === 'educationAccordion'} onChange={handleAccordionChangeLevelOne('educationAccordion')}>
+                        <Accordion sx={{ zIndex: 10 }} expanded={expandedLevelOne === 'educationAccordion'} onChange={handleAccordionChangeLevelOne('educationAccordion')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
                                 id="educationAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="body1">Education</Typography>
+                                <Typography variant="h5">Education</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}>
                                 {/* second level accordion starts here */}
@@ -233,15 +233,15 @@ export const AboutMe: React.FC = () => {
                                         id="educationOne"
                                         sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}
                                     >
-                                        <Typography variant="body1" sx={{ width: '70%' }}>Prime Digital Academy</Typography>
-                                        <Typography variant="body1" sx={{ color: 'secondary' }}> Feb 2023</Typography>
+                                        <Typography variant="body1" sx={{ width: '65%' }}>Prime Digital Academy</Typography>
+                                        <Typography variant="body1" sx={{ width: '.35', color: 'secondary', textAlign: 'right' }}> Feb 2023</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant='h6'>Full Stack Software Engineering Certification</Typography>
+                                        <Typography variant='h5' sx={{ mt: -1, mb: -1 }}>Full Stack Software Engineering Certification</Typography>
                                         <br />
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
+                                        <Typography variant={'body1'} sx={{ mt: -2, mb: -2 }}>
                                             <ul>
-                                                <li>Prime is a fully immersive software development program teaching many modern technologies, including React, JavaScript, Git, Node.js and many more. Additionally, Prime provides public speaking practice, professional skill development, diversity, equity, inclusion, and work on real world projects.</li>
+                                                <li>Prime is a fully immersive software development program teaching modern technologies, including React, JavaScript, Git, Node.js and many more. Additionally, Prime provides public speaking practice, professional skill development, diversity, equity, inclusion, and work on real world projects.</li>
                                             </ul>
                                         </Typography>
                                     </AccordionDetails>
@@ -253,13 +253,13 @@ export const AboutMe: React.FC = () => {
                                         id="educationTwo"
                                         sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}
                                     >
-                                        <Typography variant="body1" sx={{ width: '70%' }}>U of M, Carlson School of Management</Typography>
-                                        <Typography variant="body1" sx={{ color: 'secondary' }}> Aug 2008 - May 2010</Typography>
+                                        <Typography variant="body1" sx={{ width: '65%' }}>U of M, Carlson School of Management</Typography>
+                                        <Typography variant="body1" sx={{ width: '.35', color: 'secondary', textAlign: 'right' }}> Aug 2008 - May 2010</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
-                                        <Typography variant='h6'>Entrepreneurial Management</Typography>
+                                        <Typography variant='h6' sx={{ mt: -1, mb: -1 }}>Entrepreneurial Management</Typography>
                                         <br />
-                                        <Typography variant={'body1'} sx={{ mt: -2 }}>
+                                        <Typography variant={'body1'} sx={{ mt: -2, mb: -2 }}>
                                             <ul>
                                                 <li>Completed two years of course-work towards a bachelor's degree.</li>
                                             </ul>
@@ -270,6 +270,9 @@ export const AboutMe: React.FC = () => {
                         </Accordion>
                     </Box>
                 </Grid>
+                {/* <Grid item xs={12} height={(expandedLevelOne === 'educationAccordion' ? 100 : 0)}>
+                    <></>
+                </Grid> */}
             </Grid>
         </Box>
     )

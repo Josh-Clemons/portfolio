@@ -101,17 +101,17 @@ function App() {
   const mat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/ben-catching-leaves.png') });
   const mat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/ben-josh-park.png') });
   const mat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/jen-and-i.png') });
-  const mat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tinaaa.png') });
+  const mat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tina_hill.png') });
   const mat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/skol.png') });
 
 
   const cubeMaterial = [
-    mat6,
+    mat5,
     mat2,
     mat3,
     mat4,
     mat1,
-    mat5,
+    mat6,
   ];
 
   const cubeGeometry = new THREE.BoxGeometry(20, 20, 20);
@@ -167,8 +167,8 @@ function App() {
 
   const gridIronCube = new THREE.Mesh(gridIronGeometry, gridIronMaterial)
   gridIronCube.position.x = 25;
-  gridIronCube.position.y = 20;
-  gridIronCube.position.z = 600;
+  gridIronCube.position.y = 10;
+  gridIronCube.position.z = 620;
   scene.add(gridIronCube);
   // end gridIron cube
 
@@ -214,8 +214,8 @@ function App() {
   const projectGeometry = new THREE.BoxGeometry(24, 24, 24);
   const projectCube = new THREE.Mesh(projectGeometry, projectMaterial)
   projectCube.position.x = 40;
-  projectCube.position.y = 15;
-  projectCube.position.z = 650;
+  projectCube.position.y = 10;
+  projectCube.position.z = 700;
   scene.add(projectCube);
   // end projectCube cube
 
@@ -223,12 +223,12 @@ function App() {
 
 
   // start tanya cube
-  const tanyaMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_frame.jpg') });
-  const tanyaMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_tunnel.jpg') });
-  const tanyaMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_front_frame.jpg') });
-  const tanyaMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_rear.jpg') });
-  const tanyaMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_start.jpg') });
-  const tanyaMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_with_wheels.jpg') });
+  const tanyaMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/power_wheels.jpg') });
+  const tanyaMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/dartboard.png') });
+  // const tanyaMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_front_frame.jpg') });
+  // const tanyaMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_rear.jpg') });
+  const tanyaMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/cornhole_score_keeper.png') });
+  const tanyaMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tanya_profile.png') });
 
   const tanyaMaterial = [
     tanyaMat2,
@@ -243,40 +243,10 @@ function App() {
 
   const tanyaCube = new THREE.Mesh(tanyaGeometry, tanyaMaterial)
   tanyaCube.position.x = 50;
-  tanyaCube.position.y = 15;
-  tanyaCube.position.z = 685;
+  tanyaCube.position.y = 10;
+  tanyaCube.position.z = 750;
   scene.add(tanyaCube);
   // end tanya cube
-
-
-
-  // start personalProject cube
-  const projectMat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/powerwheels_conversion.jpg') });
-  const projectMat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/smoker_stuff.jpg') });
-  const projectMat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/trailer.jpg') });
-  const projectMat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/cornhole_table.png') });
-  const projectMat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/cornhole_score_keeper.jpg') });
-  const projectMat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/dartboard.png') });
-
-  const personalProjectMaterial = [
-    projectMat1,
-    projectMat5,
-    fillerMaterial,
-    fillerMaterial,
-    projectMat2,
-    projectMat6
-  ]
-
-  const personalProjectGeometry = new THREE.BoxGeometry(18, 30, 18);
-
-  const personalProjectCube = new THREE.Mesh(personalProjectGeometry, personalProjectMaterial)
-  personalProjectCube.position.x = 60;
-  personalProjectCube.position.y = 18;
-  personalProjectCube.position.z = 710;
-  scene.add(personalProjectCube);
-  // end personalProject cube
-
-
 
   // function to move camera on scroll
   const moveCamera = (event: any) => {
@@ -307,7 +277,7 @@ function App() {
     gridIronCube.rotation.y -= 0.005;
     projectCube.rotation.y -= 0.0025;
     tanyaCube.rotation.y -= 0.003;
-    personalProjectCube.rotation.y -= 0.003;
+    // personalProjectCube.rotation.y -= 0.003;
 
     orbitControls.update();
 
