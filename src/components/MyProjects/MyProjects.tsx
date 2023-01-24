@@ -31,7 +31,7 @@ export const MyProjects: React.FC = () => {
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
                                 <Typography variant={'body1'} p={1} mt={-2}>
-                                    Grid Iron Pickem is a full-stack mobile first web application where users pick NFL game winners in a competition against their friends.
+                                    Grid Iron Pickem is a full-stack web application where users pick NFL game winners in a competition against their friends.
                                     This app was designed to replace a process that was managed for 15 years with spreadsheets sent over email.
                                     <br />
                                 </Typography>
@@ -95,17 +95,20 @@ export const MyProjects: React.FC = () => {
                             </AccordionDetails>
                         </Accordion>
 
-                        {/* First Level Accordion */}
+                        {/* First Level Accordion - Client Project */}
                         <Accordion expanded={expandedLevelOne === 'clientAccordion'} onChange={handleAccordionChangeLevelOne('clientAccordion')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
                                 id="clientAccordion"
                                 sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white' }}
                             >
-                                <Typography variant="h5"><i>Client Project: </i>Coming soon!</Typography>
+                                <Typography variant="h5"><i>Client Project: </i>Minnesota Women's Press</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80, .9)', color: 'white', overflow: 'auto' }}>
-                                <></>
+                            <Typography variant={'body1'} p={1} mt={-2}>
+                                    Work in progress! More details to come....
+                                    <br />
+                                </Typography>
                             </AccordionDetails>
                         </Accordion>
 
