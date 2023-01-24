@@ -47,7 +47,7 @@ export const MyProjects: React.FC = () => {
                                     <AccordionDetails sx={{ backgroundColor: 'rgb(1, 35, 80,.85)', color: 'white' }}>
                                         <Typography variant={'body1'} sx={{ mt: -2 }}>
                                             <ul>
-                                                <li><i>Coming Soon: Hosted online for the 2023 NFL Season</i></li>
+                                                <li><Link href='gridironpicks.us' target="_blank" sx={{ color: 'white', '&:visited': { color: 'darkgrey' } }}>GridIronPicks.us</Link></li>
                                                 <li><Link href='https://github.com/Josh-Clemons/GridIron-Pickem' target="_blank" sx={{ color: 'white', '&:visited': { color: 'darkgrey' } }}>GitHub Link</Link></li>
                                             </ul>
                                         </Typography>

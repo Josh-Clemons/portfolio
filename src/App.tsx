@@ -259,7 +259,6 @@ function App() {
   document.body.onscroll = moveCamera;
 
 
-
   const animate = () => {
     requestAnimationFrame(animate); // requestAnimationFrame is a built in that tells the browser I'm going to animate something
 
