@@ -93,7 +93,7 @@ function App() {
   const mat1 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/Fam-in-black-white.png') });
   const mat2 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/ben-catching-leaves.png') });
   const mat3 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/ben-josh-park.png') });
-  const mat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/jen-and-i.png') });
+  const mat4 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/headshot_reduced.png') });
   const mat5 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/tina_hill.png') });
   const mat6 = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texLoader.load('assets/skol.png') });
 
@@ -102,8 +102,8 @@ function App() {
     mat5,
     mat2,
     mat3,
-    mat4,
     mat1,
+    mat4,
     mat6,
   ];
 
